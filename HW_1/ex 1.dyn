@@ -1,0 +1,230 @@
+{
+  "Uuid": "eeb3cb0c-1bdf-4c92-9b06-53ae1dfc861e",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "ex 1",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "1;",
+      "Id": "607ab49ce9004827885a6ecfaf90b513",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "5f6c38c52850465fbea345b593d50a8a",
+          "Name": "",
+          "Description": "Значение выражения в строке 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Обеспечивает возможность непосредственного авторства кода DesignScript"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Загрузить стандартную библиотеку Python и библиотеку DesignScript\r\nimport sys\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\n# Введенные в этом узле данные сохраняется в виде списка в переменных IN.\r\ndataEnteringNode = IN\r\n\r\n# Разместите код под этой строкой\r\na=IN[0]\r\nb=IN[1]\r\nc=IN[2]\r\nif a == b == c:\r\n    OUT = 3\r\nelif a != b != c and a != c:\r\n        OUT = 0\r\nelse: \r\n    a != b and b ==c or a != c and b == c or a == c and b!= c\r\n    OUT = 2\r\n# Назначьте вывод переменной OUT.\r\n",
+      "VariableInputPorts": true,
+      "Id": "64249ea4fccc43eeb220567e20525f06",
+      "Inputs": [
+        {
+          "Id": "d433eefad9ec49ae81af40649a495a5e",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c5e44ba0c32440a690388f7eeeae3539",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d8a4eb133f4142538e79f4dcfb9cb2f1",
+          "Name": "IN[2]",
+          "Description": "Input #2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e151693585c24debbb6687c7b315f94f",
+          "Name": "OUT",
+          "Description": "Результат сценария Python",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Выполнение встроенного сценария IronPython."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "2;",
+      "Id": "bf515ca055e64a66a308094aa1ff0d77",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "b6eeb89118d84408913afc6e394764d9",
+          "Name": "",
+          "Description": "Значение выражения в строке 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Обеспечивает возможность непосредственного авторства кода DesignScript"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "3;",
+      "Id": "91a8ec54ddc544ac8ab50b2ef9acb22e",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "60697ce4e92642ffb835cc4c52a2b5d6",
+          "Name": "",
+          "Description": "Значение выражения в строке 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Обеспечивает возможность непосредственного авторства кода DesignScript"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "",
+      "Id": "49cb464dc51f4b8191a39633f3989c18",
+      "Inputs": [],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "Обеспечивает возможность непосредственного авторства кода DesignScript"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "5f6c38c52850465fbea345b593d50a8a",
+      "End": "d433eefad9ec49ae81af40649a495a5e",
+      "Id": "a62d00d1b7ba4beea68162ccfd43ec6b"
+    },
+    {
+      "Start": "b6eeb89118d84408913afc6e394764d9",
+      "End": "c5e44ba0c32440a690388f7eeeae3539",
+      "Id": "135b567d7c654264bf027fafc8070c62"
+    },
+    {
+      "Start": "60697ce4e92642ffb835cc4c52a2b5d6",
+      "End": "d8a4eb133f4142538e79f4dcfb9cb2f1",
+      "Id": "320cea70d5fd4015acbf8b60edec3c91"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.3.0.5885",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Фоновый просмотр",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "607ab49ce9004827885a6ecfaf90b513",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 103.0,
+        "Y": 84.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script",
+        "Id": "64249ea4fccc43eeb220567e20525f06",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 403.5,
+        "Y": 118.5
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "bf515ca055e64a66a308094aa1ff0d77",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 101.0,
+        "Y": 184.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "91a8ec54ddc544ac8ab50b2ef9acb22e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 103.0,
+        "Y": 283.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "49cb464dc51f4b8191a39633f3989c18",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 34.0,
+        "Y": 575.0
+      }
+    ],
+    "Annotations": [],
+    "X": 53.327792848138131,
+    "Y": -19.776024259811663,
+    "Zoom": 0.729950825270786
+  }
+}
